@@ -8,11 +8,20 @@ $config = [
     'bootstrap' => ['log'],
     'defaultRoute'=>'book/viewbook',
     //'catchAll'=>['book/offline'],
+   'modules' => [
+     'user' => [
+        'class' => 'dektrium\user\Module',
+        'enableUnconfirmedLogin' => true,
+        'confirmWithin' => 21600,
+        'cost' => 12,
+        'admins' => ['superadmin']
+    ],
+],
     'components' => [
         'urlManager' => [
     'enablePrettyUrl' => true,
     'showScriptName'=>false,
-     'suffix' => '.html',
+     //'suffix' => '.html',
         ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -22,7 +31,8 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+        //'class' => 'auth\components\User',
+             'identityClass' => 'dektrium\user\models\User',
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
