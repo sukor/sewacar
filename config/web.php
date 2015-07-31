@@ -6,15 +6,19 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'defaultRoute'=>'book/viewbook',
+    //'defaultRoute'=>'book/viewbook',
     //'catchAll'=>['book/offline'],
    'modules' => [
+   'gridview' =>  [
+        'class' => '\kartik\grid\Module'
+        
+    ],
      'user' => [
         'class' => 'dektrium\user\Module',
         'enableUnconfirmedLogin' => true,
         'confirmWithin' => 21600,
         'cost' => 12,
-        'admins' => ['superadmin']
+        'admins' => ['sukor']
     ],
 ],
     'components' => [

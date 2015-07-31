@@ -38,10 +38,15 @@ AppAsset::register($this);
                     ['label' => 'Home', 'url' => ['/site/index']],
                     ['label' => 'About', 'url' => ['/site/about']],
                     ['label' => 'Contact', 'url' => ['/site/contact']],
+                    ['label' => 'Department', 'url' => ['/department']],
+                    ['label' => 'Position', 'url' => ['/position']],
+                    ['label' => 'Staff', 'url' => ['/staff']],
+                    ['label' => 'Request', 'url' => ['/request-dic']],
+                    ['label' => 'Type', 'url' => ['/request-type']],
                     Yii::$app->user->isGuest ?
-                        ['label' => 'Login', 'url' => ['/site/login']] :
+                        ['label' => 'Login', 'url' => ['/user/security/login']] :
                         ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                            'url' => ['/site/logout'],
+                            'url' => ['/user/security/logout'],
                             'linkOptions' => ['data-method' => 'post']],
                 ],
             ]);
